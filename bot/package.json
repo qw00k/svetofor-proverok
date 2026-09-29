@@ -1,0 +1,14 @@
+{
+  "name": "svetofor-bot",
+  "version": "1.0.0",
+  "description": "Chat-bot dlya mini-prilozheniya Svetofor proverok",
+  "main": "bot.js",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "@maxhub/max-bot-api": "^0.2.5"
+  },
+  "scripts": {
+    "start": "node bot.js"
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Светофор проверок</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="prilozhenie">
+        <header class="shapka">
+            <h1>Светофор проверок</h1>
+            <p class="podzagolovok">Узнайте, готовы ли вы к проверке</p>
+        </header>
+
+        <main id="osnovnoy-kontent">
+            <section id="ekran-start" class="ekran aktivnyy">
+                <div class="kartochka">
+                    <p>Ответьте на несколько вопросов — и мы покажем, какие требования к вам применяются и что нужно проверить.</p>
+                    <button id="knopka-start" class="knopka knopka-glavnaya">Начать проверку</button>
+                </div>
+            </section>
+
+            <section id="ekran-opros" class="ekran">
+                <div class="kartochka">
+                    <div class="progress">
+                        <span id="metka-shaga">Вопрос 1 из 4</span>
+                        <div class="progress-polosa"><div id="progress-zapolnenie"></div></div>
+                    </div>
+                    <h2 id="tekst-voprosa"></h2>
+                    <div id="konteyner-variantov" class="varianty"></div>
+                    <button id="knopka-nazad" class="knopka knopka-vtoraya">Назад</button>
+                </div>
+            </section>
+
+            <section id="ekran-rezultatov" class="ekran">
+                <div class="kartochka">
+                    <h2>Ваш светофор готовности</h2>
+                    <div id="svodka-statusa" class="svodka-statusa"></div>
+                    <div id="konteyner-rezultatov"></div>
+                    <button id="knopka-zanovo" class="knopka knopka-vtoraya">Пройти заново</button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="podval">
+            <p>Мини-приложение для мессенджера MAX · Эффективный бизнес</p>
+        </footer>
+    </div>
+    <script src="https://st.max.ru/js/max-web-app.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

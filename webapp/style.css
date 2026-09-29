@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: #000000;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.prilozhenie {
+    width: 100%;
+    max-width: 420px;
+    background: #0a0a0a;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+    border: 1px solid #1a1a1a;
+}
+
+.shapka {
+    background: #111111;
+    color: #ffffff;
+    padding: 24px 20px;
+    text-align: center;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.shapka h1 {
+    font-size: 20px;
+    margin-bottom: 4px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.podzagolovok {
+    font-size: 13px;
+    color: #888888;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+}
+
+.ekran {
+    display: none;
+    animation: poyavlenie 0.3s ease;
+}
+
+.ekran.aktivnyy {
+    display: block;
+}
+
+@keyframes poyavlenie {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.kartochka {
+    background: #111111;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid #1e1e1e;
+}
+
+.kartochka p {
+    font-size: 15px;
+    color: #cccccc;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.kartochka h2 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 16px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.knopka {
+    border: none;
+    border-radius: 12px;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.1s, background 0.2s;
+}
+
+.knopka:active {
+    transform: scale(0.98);
+}
+
+.knopka-glavnaya {
+    background: #ffffff;
+    color: #000000;
+}
+
+.knopka-glavnaya:hover {
+    background: #e0e0e0;
+}
+
+.knopka-vtoraya {
+    background: #1e1e1e;
+    color: #ffffff;
+    margin-top: 12px;
+}
+
+.knopka-vtoraya:hover {
+    background: #2a2a2a;
+}
+
+.progress {
+    margin-bottom: 16px;
+}
+
+.progress span {
+    font-size: 12px;
+    color: #666666;
+}
+
+.progress-polosa {
+    margin-top: 6px;
+    height: 6px;
+    background: #1e1e1e;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+#progress-zapolnenie {
+    height: 100%;
+    width: 0%;
+    background: #ffffff;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.varianty {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.knopka-varianta {
+    background: #0a0a0a;
+    border: 1.5px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 15px;
+    color: #cccccc;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.knopka-varianta:hover {
+    border-color: #ffffff;
+    background: #151515;
+}
+
+.knopka-varianta.vybran {
+    border-color: #ffffff;
+    background: #1a1a1a;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.svodka-statusa {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    border: 1px solid #1e1e1e;
+}
+
+.svodka-statusa.krasnyy {
+    background: #1a0000;
+    color: #ff4444;
+    border-color: #330000;
+}
+
+.svodka-statusa.zheltyy {
+    background: #1a1500;
+    color: #ffaa00;
+    border-color: #332a00;
+}
+
+.svodka-statusa.zelenyy {
+    background: #001a00;
+    color: #44ff44;
+    border-color: #003300;
+}
+
+.svodka-statusa .znachok {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.element-rezultata {
+    background: #0a0a0a;
+    border: 1px solid #1e1e1e;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.element-rezultata .tochka {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.element-rezultata .tochka.krasnyy { background: #ff4444; }
+.element-rezultata .tochka.zheltyy { background: #ffaa00; }
+.element-rezultata .tochka.zelenyy { background: #44ff44; }
+
+.element-rezultata .soderzhanie h3 {
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.element-rezultata .soderzhanie p {
+    font-size: 13px;
+    color: #999999;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.element-rezultata .soderzhanie .istochnik {
+    font-size: 11px;
+    color: #555555;
+}
+
+.pusto {
+    text-align: center;
+    color: #666666;
+    font-size: 14px;
+    padding: 20px 0;
+}
+
+.podval {
+    padding: 12px 20px 16px;
+    text-align: center;
+}
+
+.podval p {
+    font-size: 11px;
+    color: #444444;
+}
