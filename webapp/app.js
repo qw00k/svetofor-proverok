@@ -1,4 +1,3 @@
-// ---- Данные: вопросы опроса ----
 const voprosy = [
     {
         id: "otrasl",
@@ -38,9 +37,6 @@ const voprosy = [
     }
 ];
 
-// ---- Данные: требования (тестовые данные для MVP) ----
-// Внимание: данные подготовлены для демонстрации.
-// Реальные требования зависят от региона, отрасли и статуса бизнеса.
 const trebovaniya = [
     {
         id: "pozharnaya_bezopasnost",
@@ -124,11 +120,9 @@ const trebovaniya = [
     }
 ];
 
-// ---- Состояние ----
 let tekushchiyShag = 0;
 const otvety = {};
 
-// ---- DOM ----
 const ekrany = {
     start: document.getElementById("ekran-start"),
     opros: document.getElementById("ekran-opros"),
@@ -141,20 +135,17 @@ const progressZapolnenie = document.getElementById("progress-zapolnenie");
 const konteynerRezultatov = document.getElementById("konteyner-rezultatov");
 const svodkaStatusa = document.getElementById("svodka-statusa");
 
-// ---- Показать экран ----
 function pokazatEkran(imya) {
     Object.values(ekrany).forEach(e => e.classList.remove("aktivnyy"));
     ekrany[imya].classList.add("aktivnyy");
 }
 
-// ---- Старт ----
 document.getElementById("knopka-start").addEventListener("click", () => {
     tekushchiyShag = 0;
     pokazatEkran("opros");
     otrisovatVopros();
 });
 
-// ---- Отрисовка вопроса ----
 function otrisovatVopros() {
     const v = voprosy[tekushchiyShag];
     tekstVoprosa.textContent = v.tekst;
@@ -171,7 +162,6 @@ function otrisovatVopros() {
     });
 }
 
-// ---- Выбор варианта ----
 function vybratVariant(idVoprosa, znachenie, tsel) {
     otvety[idVoprosa] = znachenie;
     Array.from(konteynerVariantov.children).forEach(k => k.classList.remove("vybran"));
@@ -188,7 +178,6 @@ function vybratVariant(idVoprosa, znachenie, tsel) {
     }, 200);
 }
 
-// ---- Назад ----
 document.getElementById("knopka-nazad").addEventListener("click", () => {
     if (tekushchiyShag > 0) {
         tekushchiyShag--;
@@ -198,7 +187,6 @@ document.getElementById("knopka-nazad").addEventListener("click", () => {
     }
 });
 
-// ---- Результаты ----
 function pokazatRezultaty() {
     const sovpavshie = trebovaniya.filter(t => {
         return t.sovpadenie.otrasl.includes(otvety.otrasl)
@@ -265,7 +253,6 @@ function pokazatRezultaty() {
     pokazatEkran("rezultaty");
 }
 
-// ---- Заново ----
 document.getElementById("knopka-zanovo").addEventListener("click", () => {
     Object.keys(otvety).forEach(k => delete otvety[k]);
     tekushchiyShag = 0;
