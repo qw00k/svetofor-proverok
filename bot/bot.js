@@ -8,7 +8,6 @@ if (!process.env.MAX_BOT_TOKEN) {
 
 const bot = new Bot(process.env.MAX_BOT_TOKEN);
 
-// Команда /start
 bot.command('start', (kontekst) => {
     kontekst.reply('Добро пожаловать в «Светофор проверок».\n\nУзнайте, какие требования к вам применяются и что нужно проверить перед проверкой.', {
         attachments: [{
@@ -24,7 +23,6 @@ bot.command('start', (kontekst) => {
     });
 });
 
-// Обработка данных из мини-приложения
 bot.on('message_created', (kontekst) => {
     const soobshchenie = kontekst.message;
     if (soobshchenie && soobshchenie.web_app_data) {
